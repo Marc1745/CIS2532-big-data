@@ -1,0 +1,52 @@
+'''
+Marc M
+12/11/20
+this program uses sqlite3 to access and sort through a large set of data books.db
+'''
+
+import sqlite3 
+  
+# connecting to the database  
+connection = sqlite3.connect("books.db") 
+
+# cursor  
+crsr = connection.cursor()
+
+# a #############################################
+crsr.execute("SELECT * FROM authors")
+ans = crsr.fetchall()
+print('########## authors ############')
+print(ans)
+print('################################')
+
+# b #############################################
+crsr.execute("SELECT * FROM titles")
+ans = crsr.fetchall()
+print('########## titles ############')
+print(ans)
+print('################################')
+
+# c ############################################
+
+SELECT 'Harvey', 'Deitel'
+FROM authors
+INNER JOIN table
+ON 'Harvey', 'Deitel'.common_field = table.common_field;
+ans = crsr.fetchall()
+print('########## select spacific author ############')
+print(ans)
+print('################################')
+
+# d ############################################
+sql_command = INSERT INTO emp authors (23, 'McCann', 'Liam');
+crsr.execute(sql_command)
+ans = crsr.fetchall()
+print('########## new author ############')
+print(ans)
+print('################################')
+
+# e ############################################
+sql_command = INSERT INTO emp titles('0135408973', 'Python for Dummies', 1, '2020');
+crsr.execute("SELECT * FROM titles")
+ans = crsr.fetchall()
+print('########## new title ############')
