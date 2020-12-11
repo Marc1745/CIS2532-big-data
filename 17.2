@@ -1,0 +1,19 @@
+'''
+Marc M
+12/11/20
+this program uses sqlite3 to access and sort through a large set of data books.db
+'''
+
+import sqlite3
+
+#Connecting to sqlite
+conn = sqlite3.connect('books.db')
+
+#Creating a cursor object using the cursor() method
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM titles")  
+
+ans = cursor.fetchall()
+
+print(ans)
